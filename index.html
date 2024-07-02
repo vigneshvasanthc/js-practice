@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .bc {
+            background-color: white;
+        }
+        .width-max {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <h1 class="title">Booksky</h1>
+    </div>
+
+    <div class="container">
+        <div class="book-container">
+            <h2>Rich Dad Poor Dad</h2>
+            <h5>Robert</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse explicabo, accusantium magni quas sed perspiciatis facere fuga minima blanditiis, eligendi laborum eveniet ratione odio distinctio vero! Aut exercitationem similique iste?</p>
+            <button onclick="deleteElement(event)">Delete</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay">
+
+    </div>
+
+    <div class="popup-box">
+        <h2>Add Book</h2>
+        <form action="">
+            <input type="text" placeholder="Book Title Input" id="bookTitleInput">
+            <input type="text" placeholder="Book Author Input" id="bookAuthorInput">
+            <textarea name="" placeholder="Short Description" id="bookDescriptionInput"></textarea>
+            <button type="button" id="bookAdd" onclick="addBook()">Add</button>
+            <button type="button" id="bookCancel" onclick="cancelBook()">Cancel</button>
+        </form>
+    </div>
+
+    <button type="button" class="btn add-btn" id="addButton">+</button>
+
+    <input type="text" id="textAdd">
+
+    <button type="button" onclick="addContent()">Add</button>
+
+    <ul id="listContainer">
+        <li>
+           Show Value
+            <button type="button" onclick="deleteContent(event)">Delete</button>
+        </li>
+    </ul>
+   
+    <script>
+       
+
+        var a = document.getElementById('listContainer');
+        var b = document.getElementById('textAdd')
+
+    function addContent() {
+        var listItem = document.createElement("li");
+        listItem.innerHTML = b.value + '<button onclick="deleteContent(event)">Delete</button>';
+        a.append(listItem)
+        // console.log(a.textContent = 'hello');
+        // a.append('listContainer')
+
+        console.log(b.value);
+  }
+
+  function deleteContent(event) {
+    event.target.parentElement.remove()
+  }
+    </script>
+
+    <script src="demo.js"></script>
+</body>
+
+</html>
